@@ -49,9 +49,9 @@ board = esp32doit-devkit-v1
 framework = arduino
 monitor_speed = 115200
 lib_deps = 
-/tadafruit/Adafruit BusIO @ ^1.13.1/n
-/tadafruit/Adafruit Unified Sensor @ ^1.1.6/n
-/tadafruit/Adafruit GFX Library @ ^1.11.3/n
+&emsp;adafruit/Adafruit BusIO @ ^1.13.1
+&emsp;adafruit/Adafruit Unified Sensor @ ^1.1.6
+&emsp;adafruit/Adafruit GFX Library @ ^1.11.3
 
 ## Usage <a name = "usage"></a>
 
