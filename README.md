@@ -57,5 +57,5 @@ adafruit/Adafruit Unified Sensor @ ^1.1.6
 adafruit/Adafruit GFX Library @ ^1.11.3
 
 ## Usage <a name = "usage"></a>
-
+https://github.com/nuxarch
 
