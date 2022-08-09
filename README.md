@@ -1,4 +1,15 @@
-This program use P10 RGB Matrix Panel and ESP32 to display information
+# ESP32[esp32doit-devkit-v1] with P10 Matrix Panel Display
+
+## Table of Contents
+
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Usage](#usage)
+- [Contributing](../CONTRIBUTING.md)
+
+## About <a name = "about"></a>
+
+This ESP32 program use P10 RGB Matrix Panel to display information
 First line is running text displaying Network Time Protocol : days of a week and, date, month and year
 Second line display hour and minutes
 
@@ -16,3 +27,32 @@ RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false, 32);
 also modify in RGBmatrixPanel.cpp
 // R1, G1, B1, R2, G2, B2 pins
 line 143 :  static const uint8_t defaultrgbpins[] = {25, 26, 27, 21, 22, 23};
+
+
+
+## Getting Started <a name = "getting_started"></a>
+
+1. Clone the github 
+2. Open Folder from VSCode and PIO
+3. Build and Compile 
+
+### Prerequisites
+1. VSCode
+2. PlatformIO
+3. Library
+
+### Installing
+Platformio.ini file:
+[env:esp32doit-devkit-v1]
+platform = espressif32
+board = esp32doit-devkit-v1
+framework = arduino
+monitor_speed = 115200
+lib_deps = 
+	adafruit/Adafruit BusIO @ ^1.13.1
+	adafruit/Adafruit Unified Sensor @ ^1.1.6
+	adafruit/Adafruit GFX Library @ ^1.11.3
+
+## Usage <a name = "usage"></a>
+
+
