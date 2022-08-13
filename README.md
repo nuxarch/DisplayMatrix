@@ -42,19 +42,7 @@ line 143 :  static const uint8_t defaultrgbpins[] = {25, 26, 27, 21, 22, 23};
 3. Library
 
 ### Installing
-Platformio.ini file:
-[env:esp32doit-devkit-v1]
-platform = espressif32
-board = esp32doit-devkit-v1
-framework = arduino
-monitor_speed = 115200
-lib_deps = 
-
-adafruit/Adafruit BusIO @ ^1.13.1
-
-adafruit/Adafruit Unified Sensor @ ^1.1.6
-
-adafruit/Adafruit GFX Library @ ^1.11.3
+see Platformio.ini fil
 
 ## Usage <a name = "usage"></a>
 https://github.com/nuxarch
