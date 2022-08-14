@@ -1,4 +1,4 @@
-# ESP32[esp32doit-devkit-v1] with P10 Matrix Panel Display
+# Project Title
 
 ## Table of Contents
 
@@ -9,41 +9,38 @@
 
 ## About <a name = "about"></a>
 
-This ESP32 program use P10 RGB Matrix Panel to display information
-First line is running text displaying Network Time Protocol : days of a week and, date, month and year
-Second line display hour and minutes
-
-make sure this is configured in main.cpp
-- #define TZ 7 // Time Zone
-- #define CLK 14
-- #define OE 33
-- #define LAT 32
-- #define A 13 //12
-- #define B 19 //16
-- #define C 4  //17
-- #define D 18
-- RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false, 32);
-
-also modify in RGBmatrixPanel.cpp
-// R1, G1, B1, R2, G2, B2 pins
-line 143 :  static const uint8_t defaultrgbpins[] = {25, 26, 27, 21, 22, 23};
-
-
+Write about 1-2 paragraphs describing the purpose of your project.
 
 ## Getting Started <a name = "getting_started"></a>
 
-1. Clone the github 
-2. Open Folder from VSCode and PIO
-3. Build and Compile 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-1. VSCode
-2. PlatformIO
-3. Library
+
+What things you need to install the software and how to install them.
+
+```
+Give examples
+```
 
 ### Installing
-see Platformio.ini file
+
+A step by step series of examples that tell you how to get a development env running.
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo.
 
 ## Usage <a name = "usage"></a>
-https://github.com/nuxarch
 
+Add notes about how to use the system.

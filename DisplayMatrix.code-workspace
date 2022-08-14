@@ -4,12 +4,21 @@
 			"path": "."
 		},
 		{
-			"path": "../esp32-mqtt"
+			"path": "../esp32-mqtt-template"
 		}
 	],
 	"settings": {
 		"files.associations": {
-			"ctime": "cpp"
+			"ctime": "cpp",
+			"array": "cpp",
+			"deque": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"cstring": "cpp"
 		}
 	}
 }
