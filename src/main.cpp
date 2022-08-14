@@ -31,8 +31,8 @@ unsigned int NewRTCh = 24;
 unsigned int NewRTCm = 60;
 unsigned int NewRTCs = 10;
 time_t t;
-char ssid[] = "Nux Arch";
-char pass[] = "akhtar2015";
+// char ssid[] = "Nux Arch";
+// char pass[] = "akhtar2015";
 // char ssid[] = "Ravensburg";
 // char pass[] = "4khtar2015";
 const char *wd[7] = {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"};
@@ -212,21 +212,7 @@ void setup()
 {
   Serial.begin(115200);
 
-  // Serial.print("Attempting to connect to Network named: ");
-  // Serial.println(ssid); // print the network name (SSID);
-
   Wifi.connect();
-  // WiFi.begin(ssid, pass);
-
-  // while (WiFi.status() != WL_CONNECTED)
-  // {
-  //   Serial.print(".");
-  //   delay(1000);
-  // }
-  // Serial.println("");
-  // IPAddress ip = WiFi.localIP();
-  // Serial.print("IP Address: ");
-  // Serial.println(ip);
 
   configTime(TZ * 3600, 0, "ntp.nict.jp", "ntp.jst.mfeed.ad.jp"); // enable NTP
 
