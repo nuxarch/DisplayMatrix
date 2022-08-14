@@ -2,9 +2,9 @@
 #include <WiFi.h>
 #include <Adafruit_GFX.h>
 #include <RGBmatrixPanel.h>
-
-#include "Fonts/FreeMonoBold12pt7b.h"
+#include "wifi.hpp"
 #include "Fonts/kongtext4pt7b.h"
+
 #define TZ 7 // Time Zone
 #define CLK 14
 #define OE 33
@@ -13,6 +13,9 @@
 #define B 19 //16
 #define C 4  //17
 #define D 18
+
+
+_Wifi Wifi;
 RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false, 32);
 // String Message0 = "To all people, I love you and wish you safety and recovery for patients";
 String Message1 = "";
@@ -28,10 +31,10 @@ unsigned int NewRTCh = 24;
 unsigned int NewRTCm = 60;
 unsigned int NewRTCs = 10;
 time_t t;
-// char ssid[] = "Nux Arch";
-// char pass[] = "akhtar2015";
-char ssid[] = "Ravensburg";
-char pass[] = "4khtar2015";
+char ssid[] = "Nux Arch";
+char pass[] = "akhtar2015";
+// char ssid[] = "Ravensburg";
+// char pass[] = "4khtar2015";
 const char *wd[7] = {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"};
 const char *months[] = {"Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nop", "Des"};
 
@@ -107,19 +110,7 @@ void getTim()
     NewRTCh = h;
   }
 }
-// void Date_text()
-// {
-//   matrix.setCursor(1, 23);
-//   matrix.fillRect(0, 23, 64, 8, myBLACK);
-//   matrix.setFont(&kongtext4pt7b);
-//   matrix.setTextColor(myRED);
-//   matrix.printf("%02d", d);
-//   matrix.setTextColor(myGREEN);
-//   matrix.printf("%s", months[month]);
-//   matrix.setTextColor(myRED);
-//   matrix.printf("%04d", yr);
-//   matrix.setFont();
-// }
+
 void Date_get()
 {
   
@@ -221,19 +212,21 @@ void setup()
 {
   Serial.begin(115200);
 
-  Serial.print("Attempting to connect to Network named: ");
-  Serial.println(ssid); // print the network name (SSID);
+  // Serial.print("Attempting to connect to Network named: ");
+  // Serial.println(ssid); // print the network name (SSID);
 
-  WiFi.begin(ssid, pass);
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    Serial.print(".");
-    delay(1000);
-  }
-  Serial.println("");
-  IPAddress ip = WiFi.localIP();
-  Serial.print("IP Address: ");
-  Serial.println(ip);
+  Wifi.connect();
+  // WiFi.begin(ssid, pass);
+
+  // while (WiFi.status() != WL_CONNECTED)
+  // {
+  //   Serial.print(".");
+  //   delay(1000);
+  // }
+  // Serial.println("");
+  // IPAddress ip = WiFi.localIP();
+  // Serial.print("IP Address: ");
+  // Serial.println(ip);
 
   configTime(TZ * 3600, 0, "ntp.nict.jp", "ntp.jst.mfeed.ad.jp"); // enable NTP
 

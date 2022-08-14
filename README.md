@@ -42,7 +42,7 @@ line 143 :  static const uint8_t defaultrgbpins[] = {25, 26, 27, 21, 22, 23};
 3. Library
 
 ### Installing
-see Platformio.ini fil
+see Platformio.ini file
 
 ## Usage <a name = "usage"></a>
 https://github.com/nuxarch
