@@ -3,6 +3,7 @@
 #include <Adafruit_GFX.h>
 #include <RGBmatrixPanel.h>
 #include "Fonts/kongtext4pt7b.h"
+#include "mqqt.hpp"
 
 #define TZ 7 // Time Zone
 #define CLK 14
@@ -120,10 +121,8 @@ public:
 
     void Date_get()
     {
-
         Serial.println("[" + String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + "]");
-        Message1 = text + String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + " PRODI TPPU";
-        // Message1 = callback;
+        Message1 = String(textMsg) +"  "+ String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + " PRODI TPPU";
     }
     void dofw_text()
     {

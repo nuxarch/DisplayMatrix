@@ -27,7 +27,7 @@ long lastReconnectAttempt = 0;
 
 void publishMQTT(char *topic, char *payload);
 StaticJsonDocument<200> doc;
-const char *text = "";
+const char *textMsg = "";
 void callback(char *topic, byte *payload, unsigned int length)
 {
     payload[length] = '\0';
@@ -42,9 +42,9 @@ void callback(char *topic, byte *payload, unsigned int length)
         Serial.println(error.f_str());
         return;
     }
-    text = doc["Text"];
+    textMsg = doc["Text"];
     // Message1 = "" + String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + " PRODI TPPU";
-    Serial.println("Text:" + String(text));
+    Serial.println("Text:" + String(textMsg));
     if (strcmp(topicFunction, "set") == 0)
     {
         // publishMQTT("reply", (char *)text);

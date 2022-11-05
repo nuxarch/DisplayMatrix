@@ -13,7 +13,7 @@ class _Wifi {
       wifiManager.setConfigPortalBlocking(true);
       wifiManager.setConfigPortalTimeout(180);
       delay(500);
-      if (wifiManager.autoConnect("ESP32")) {  //automatically connect using saved credentials if connection fails it starts an access point
+      if (wifiManager.autoConnect("TeFa-JTM-LED-Matrix-P00")) {  //automatically connect using saved credentials if connection fails it starts an access point
         Serial.print("Connected to IP address: ");
         Serial.print(WiFi.localIP());
         Serial.print(" Wifi Strength: ");
