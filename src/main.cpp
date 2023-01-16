@@ -39,7 +39,7 @@ void getBTTime()
   Serial.println("Bluetooth Device is Ready to Pair");
   while (1)
   {
-    // Serial.println("waiting for connection in " + String(wait) + "s");
+    
     if (wait > 15)
     {
       break;
@@ -54,11 +54,13 @@ void getBTTime()
         prefs.putString("msg", "test");
         wait = 0;
       }
+      // Serial.println("waiting for connection in " + String(wait) + "s");
     }
     if (!ESP_BT.connected())
     {
       ++wait;
       delay(1000);
+      Serial.println("waiting for connection in " + String(wait) + "s");
     }
   }
   Serial.println("bluetooth option finished,msg ==>" + prefs.getString("msg", "Jurusan TPPU"));
@@ -68,12 +70,12 @@ void setup()
 {
   Serial.begin(115200);
   getBTTime();
-  // rtc.setTime(00, 51, 00, 6, 11, 2022); // 17th Jan 2021 15:24:30
+  rtc.setTime(0, 06, 11, 16, 1, 2023); // 17th Jan 2021 15:24:30
   // Wifi.connect();
   // configTime(TZ * 3600, 0, "ntp.nict.jp", "ntp.jst.mfeed.ad.jp"); // enable NTP
-  // matrix.begin();
-  // matrix.setTextWrap(false);
-  // matrix.fillScreen(0);
+  matrix.begin();
+  matrix.setTextWrap(false);
+  matrix.fillScreen(0);
 
   // client.setServer(mqtt_broker, mqtt_port);
   // client.setCallback(callback);
@@ -82,15 +84,15 @@ void setup()
 }
 void loop()
 {
-  // Incoming = ESP_BT.read(); // Read what we recevive
+  String bt_msg = ESP_BT.readStringUntil('\n');
 
-  // matDisplay.updateTime();
-  // matDisplay.getTim();
+  matDisplay.updateTime();
+  matDisplay.getTim();
 
-  Serial.println(rtc.getTime("%A, %B %d %Y %H:%M:%S")); // (String) returns time with specified format
+  // Serial.println(rtc.getTime("%A, %B %d %Y %H:%M:%S")); // (String) returns time with specified format
   String tmp = rtc.getTime("%A, %B %d %Y %H:%M:%S");
-  struct tm timeinfo = rtc.getTimeStruct();
-  // matDisplay.Date_get_internal_rtc(timeinfo);
+  // struct tm timeinfo = rtc.getTimeStruct();
+  matDisplay.Date_get_internal_rtc(tmp);
   // matDisplay.Date_get();
-  // matDisplay.scroll_text1(0, frameDelay, Message1);
+  matDisplay.scroll_text1(0, frameDelay, Message1);
 }

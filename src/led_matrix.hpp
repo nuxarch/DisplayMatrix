@@ -128,7 +128,7 @@ public:
     void Date_get_internal_rtc(String tmp)
     {
         // Message1 = String(textMsg) + "  " + String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + " PRODI TPPU";
-        Serial.println(Message1);
+        Serial.println(tmp);
     }
 
     void dofw_text()
