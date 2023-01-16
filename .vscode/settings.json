@@ -1,5 +1,13 @@
 {
     "files.associations": {
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "*.tcc": "cpp",
+        "iomanip": "cpp",
+        "limits": "cpp",
+        "numeric": "cpp",
+        "streambuf": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
     }
 }

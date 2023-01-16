@@ -3,7 +3,7 @@
 #include <Adafruit_GFX.h>
 #include <RGBmatrixPanel.h>
 #include "Fonts/kongtext4pt7b.h"
-#include "mqqt.hpp"
+// #include "mqqt.hpp"
 
 #define TZ 7 // Time Zone
 #define CLK 14
@@ -54,10 +54,11 @@ class P10_MatrixLed
 private:
     /* data */
     String text;
+
 public:
     P10_MatrixLed(/* args */);
     ~P10_MatrixLed();
-    
+
     void getTim()
     {
         if (flasher)
@@ -121,9 +122,15 @@ public:
 
     void Date_get()
     {
-        Serial.println("[" + String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + "]");
-        Message1 = String(textMsg) +"  "+ String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + " PRODI TPPU";
+        // Message1 = String(textMsg) + "  " + String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + " PRODI TPPU";
+        Serial.println(Message1);
     }
+    void Date_get_internal_rtc(String tmp)
+    {
+        // Message1 = String(textMsg) + "  " + String(wd[dow]) + ", " + String(d) + " " + String(months[month]) + " " + String(yr) + " PRODI TPPU";
+        Serial.println(Message1);
+    }
+
     void dofw_text()
     {
         text = wd[dow];
